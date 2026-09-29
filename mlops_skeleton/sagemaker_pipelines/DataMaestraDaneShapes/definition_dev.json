@@ -1,0 +1,111 @@
+{
+    "Version": "2020-12-01",
+    "Metadata": {},
+    "Parameters": [
+        {
+            "Name": "ProcessingInstanceType",
+            "Type": "String",
+            "DefaultValue": "ml.t3.2xlarge"
+        },
+        {
+            "Name": "ProcessingInstanceCount",
+            "Type": "Integer",
+            "DefaultValue": 1
+        },
+        {
+            "Name": "ProcessingDBDatalake",
+            "Type": "String"
+        },
+        {
+            "Name": "ProcessingTBDaneshapes",
+            "Type": "String"
+        }
+    ],
+    "PipelineExperimentConfig": {
+        "ExperimentName": {
+            "Get": "Execution.PipelineName"
+        },
+        "TrialName": {
+            "Get": "Execution.PipelineExecutionId"
+        }
+    },
+    "Steps": [
+        {
+            "Name": "features-daneshapes",
+            "Type": "Processing",
+            "Arguments": {
+                "ProcessingResources": {
+                    "ClusterConfig": {
+                        "InstanceType": {
+                            "Get": "Parameters.ProcessingInstanceType"
+                        },
+                        "InstanceCount": {
+                            "Get": "Parameters.ProcessingInstanceCount"
+                        },
+                        "VolumeSizeInGB": 5
+                    }
+                },
+                "AppSpecification": {
+                    "ImageUri": "683313688378.dkr.ecr.us-east-1.amazonaws.com/sagemaker-scikit-learn:0.23-1-cpu-py3",
+                    "ContainerArguments": [
+                        "--region",
+                        "us-east-1",
+                        "--feature-store-bucket",
+                        "%(feature_store_bucket)s",
+                        "--entidad",
+                        "%(entidad)s",
+                        "--fuente",
+                        "%(fuente)s",
+                        "--periodicidad",
+                        "%(periodicidad)s",
+                        "--complejidad",
+                        "%(complejidad)s",
+                        "--record-identifier-name",
+                        "%(record_identifier_name)s",
+                        "--record-event-time-name",
+                        "EventTime",
+                        "--db-datalake",
+                        {
+                            "Get": "Parameters.ProcessingDBDatalake"
+                        },
+                        "--tb-daneshapes",
+                        {
+                            "Get": "Parameters.ProcessingTBDaneshapes"
+                        }
+                    ],
+                    "ContainerEntrypoint": [
+                        "python3",
+                        "/opt/ml/processing/input/code/main.py"
+                    ]
+                },
+                "RoleArn": "%(process_rol_arn)s",
+                "ProcessingInputs": [
+                    {
+                        "InputName": "input-1",
+                        "AppManaged": false,
+                        "S3Input": {
+                            "S3Uri": "s3://%(feature_store_bucket)s/Dane/artefactos/codigo/features/DataMaestraDaneShapes/requirements.txt",
+                            "LocalPath": "/opt/ml/processing/input/requirements",
+                            "S3DataType": "S3Prefix",
+                            "S3InputMode": "File",
+                            "S3DataDistributionType": "FullyReplicated",
+                            "S3CompressionType": "None"
+                        }
+                    },
+                    {
+                        "InputName": "code",
+                        "AppManaged": false,
+                        "S3Input": {
+                            "S3Uri": "s3://%(feature_store_bucket)s/Dane/artefactos/codigo/features/DataMaestraDaneShapes/main.py",
+                            "LocalPath": "/opt/ml/processing/input/code",
+                            "S3DataType": "S3Prefix",
+                            "S3InputMode": "File",
+                            "S3DataDistributionType": "FullyReplicated",
+                            "S3CompressionType": "None"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+*.swp
+package-lock.json
+.pytest_cache
+*.egg-info
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# CDK Context & Staging files
+.cdk.staging/
+cdk.out/
+
+# Data
+data/
+.ipynb_checkpoints/
+*.pyc
+
+# Unit test
+*coverage*
+htmlcov/
+pylint*
+junit/
+
+#Archivos geoespaciales
+*.shp
+*.dbf
+*.csv

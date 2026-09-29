@@ -1,0 +1,30 @@
+
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+Z
+*src/features/DataMaestraDaneShapes/main.py,c/9/c92bcecf47fbdb5f35ee57be5365c43ae6a539cf
+x
+Hmlops_skeleton/feature_group/HistProsClientesAlpaso/definition_prod.json,b/7/b77b6f77c680dbae03f50dbedee7b527a78e0cae
+U
+%tests/unit/test_hist_pros_clientes.py,1/4/1428383dcdd4adf557452f0992e3185cb06179d3
+T
+$tests/unit/test_bucket_daneshapes.py,4/0/40107048fbd59388310b6cfe716a6a991ace2a45
+k
+;mlops_skeleton/artifactory/configuration/resource_config.py,1/c/1c2878ee123600a719f217718fbc735d3471c722
+|
+Lmlops_skeleton/sagemaker_pipelines/HistProsClientesLocal/definition_dev.json,3/5/35cab67026c5c22683deb9e9cd5b1dd753278317
+~
+Nmlops_skeleton/sagemaker_pipelines/HistProsClientesAlpaso/definition_prod.json,f/a/fa18dd5854b665e21ffb46b4ec7be244577d0fb0
+x
+Hmlops_skeleton/trigger/HistProsClientesLocal/lambda/definition_prod.json,2/5/25386e1abde21b88de5349eb0e6b7b0e3dc5686d
+}
+Mmlops_skeleton/sagemaker_pipelines/HistProsClientesLocal/definition_prod.json,9/8/981067994e5f87d999979d77802982e8d4da96df
+x
+Hmlops_skeleton/trigger/HistProsClientesAlpaso/lambda/definition_dev.json,8/c/8c16399b0e5c1560aa78a562025d5659174780d1
+O
+mlops_skeleton/feature_stack.py,6/1/618f87ae8c0339c88bc0c9fdcb944057fa5be492
+y
+Imlops_skeleton/trigger/HistProsClientesAlpaso/lambda/definition_prod.json,e/f/ef009a6b64f887198214efdb2402b9d6bf891d96

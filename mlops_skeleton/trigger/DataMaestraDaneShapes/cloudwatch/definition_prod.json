@@ -1,0 +1,5 @@
+{
+    "schedule_expression": "cron(0 6 6 * ? *)",
+    "state": "ENABLED",
+    "description": "Rule to trigger features orchestration"
+}

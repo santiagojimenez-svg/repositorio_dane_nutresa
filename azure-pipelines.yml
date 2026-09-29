@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------------|
+#               NUTRESA AZURE DEVOPS | MLOPS-FEATURES-PIPELINE                     |
+# Fabrica: NetW Consulting S.A.S & New Inntech S.A.S                               |
+# Contacto: gerencia@newinntech.com                                                |
+# Autor: Oscar Garcia                                                              |
+# Fecha: 27 Diciembre 2021                                                         |
+# @copyright 2021 New Inntech S.A.S Todos los derechos reservados                  |
+# ---------------------------------------------------------------------------------|
+
+trigger:
+  - master
+  - qa
+  - dev
+  - lab/*
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Shared/mlops-templates
+      ref: 'refs/heads/master'
+    - repository: utils
+      type: git
+      name: Shared/pipeline-utils
+      ref: 'refs/heads/master'
+
+
+stages:
+  - template: main.yml@templates
+    parameters:
+      resource: 'features'
+      credentialTest: false
+      sourceBranch: ['master', 'qa', 'dev']
+      commandBuild: 'pip install -r requirements.txt'
+      commandTest: 'coverage run -m pytest -v -p no:cacheprovider --junitxml=junit/test-results.xml --cov=. --cov-report=xml --cov-report=html'
+      sonarSources: 'src'
+      sonarExclusions: '**/*.yaml,**/*.yml,**/tests/unit/*,**/app.py,**/setup.py,**/*__init__.py,src/evaluate/**/*,src/lambdas/**/*,src/models/**/*,**/notebooks/*,**/htmlcov/*,**/junit/*,**/mlops_skeleton/*'
+      sonarPathCoverage: 'coverage.xml'
+      sourcePylint: 'src mlops_skeleton'
+      cdkVersion: '1.121.0'

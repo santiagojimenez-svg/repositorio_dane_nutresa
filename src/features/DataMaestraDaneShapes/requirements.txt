@@ -1,0 +1,6 @@
+sagemaker == 2.49.0
+awswrangler == 2.4.0
+boto3==1.21.0
+pandas==1.1.5
+geopandas==0.9.0
+pyarrow

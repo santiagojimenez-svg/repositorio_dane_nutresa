@@ -1,0 +1,90 @@
+[
+    {
+        "Key": "a-tipo-cobro",
+        "Value": "unico"
+    },
+    {
+        "Key": "a-implementador",
+        "Value": "ikitech"
+    },
+    {
+        "Key": "a-identificador-unico",
+        "Value": "ch1xxxx-4035-mlops-model-prospcli_103229"
+    },
+    {
+        "Key": "a-team-implementador",
+        "Value": "ikitech"
+    },
+    {
+        "Key": "a-lider-proyecto",
+        "Value": "julio-zapata"
+    },
+    {
+        "Key": "a-iac",
+        "Value": "cdk"
+    },
+    {
+        "Key": "a-repo",
+        "Value": "4035-mlops-features-dane_shapes"
+    },
+    {
+        "Key": "a-pagador",
+        "Value": "103229"
+    },
+    {
+        "Key": "a-negocio",
+        "Value": "helados"
+    },
+    {
+        "Key": "a-sociedad",
+        "Value": "meals-de-colombia-sas"
+    },
+    {
+        "Key": "a-pais",
+        "Value": "colombia"
+    },
+    {
+        "Key": "a-id-proyecto",
+        "Value": "ch1xxxx-4035-mlops-model-prospcli"
+    },
+    {
+        "Key": "a-ambiente",
+        "Value": "%(aws_account_env)s"
+    },
+    {
+        "Key": "a-responsable-facturacion",
+        "Value": "julio-zapata"
+    },
+    {
+        "Key": "a-responsable-incidente",
+        "Value": "juan-david-tangarife"
+    },
+    {
+        "Key": "a-cuenta",
+        "Value": "%(aws_account_name)s"
+    },
+    {
+        "Key": "a-patch",
+        "Value": "no-aplica"
+    },
+    {
+        "Key": "a-agent-wls",
+        "Value": "no-aplica"
+    },
+    {
+        "Key": "a-programacion",
+        "Value": "no-aplica"
+    },
+    {
+        "Key": "a-backup-ec2-prd",
+        "Value": "no-aplica"
+    },
+    {
+        "Key": "a-backup-rds-prd",
+        "Value": "no-aplica"
+    },
+    {
+        "Key": "a-backup-s3-prd",
+        "Value": "no-aplica"
+    }
+]

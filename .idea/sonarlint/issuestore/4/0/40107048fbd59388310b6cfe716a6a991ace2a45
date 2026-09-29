@@ -1,0 +1,4 @@
+
+„python:S101"hRename class "Test_S3_Bucket" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(Â“ßÇøÿÿÿÿ
+Xpython:S1481"ARemove the unused local variable "ssm_feature_store_bucket_name".(±ºœn
+Ipython:S1481&",Remove the unused local variable "response".(ù¶´ôüÿÿÿÿ
